@@ -10,7 +10,7 @@ class Config
 {
   private static $instance;
 
-  private $config
+  private $config;
   
   private $path;
 
@@ -42,7 +42,7 @@ class Config
   public static function get($key, $default = null)
   {
     if (!self::$instance) {
-      trhow new \Exception('BSFP config not initialized add "new \\BSFP\\C($path)" before using "\\BSFP\\C::get($key)"');
+      throw new \Exception('BSFP config not initialized add "new \\BSFP\\C($path)" before using "\\BSFP\\C::get($key)"');
     }
 
     return self::$instance->config->get($key, $default);
